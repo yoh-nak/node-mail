@@ -1,0 +1,8 @@
+{
+  "title": "Nodeメールフォーム",
+  "copyright": "ナカノヨウスケ",
+  "smtp": "smtp.sample.com",
+  "user": "Gmailアドレス",
+  "pass": "Gmailパスワード",
+  "port": "25"
+}

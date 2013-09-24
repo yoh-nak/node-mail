@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title><%= title %></title>
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.css" />
+<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.js"></script>
+<script>
+$(document).on('pageshow','#index',function(){
+	sessionStorage.subject ? $('#subject').val(sessionStorage.subject) : $('#subject').val('');
+	sessionStorage.name ? $('#name').val(sessionStorage.name) : $('#name').val('');
+	sessionStorage.email ? $('#email').val(sessionStorage.email) : $('#email').val('');
+	sessionStorage.content ? $('#content').val(sessionStorage.content) : $('#content').val('');
+
+	$('form').on('submit',function(){
+		sessionStorage.subject = $('#subject').val();
+		sessionStorage.name = $('#name').val();
+		sessionStorage.email = $('#email').val();
+		sessionStorage.content = $('#content').val();
+	});
+});
+</script>
+</head>
+  <body>
+  	<div data-role="page" id="index">
+  	<header data-role="header">
+  		 <h1><%= title %></h1>
+  	</header>
+  	<section data-role="content">
+		<h2><%= title %></h2>
+		<a data-role="button" href="mailform">お問い合わせ</a>
+    </section>
+    <footer data-role="footer" data-position="fixed">
+    	<h4>Copyright &copy; <%= copyright%></h4>
+    </footer>
+    </div>
+  </body>
+</html>
